@@ -1,0 +1,14 @@
+- hosts: all
+  sudo: yes
+  remote_user: vagrant
+
+  roles:
+    - st.foundation
+    - Ansibles.postgresql
+    - st.django
+
+  vars:
+    base_project_name: pylama_com
+    locale_locales:
+      - en_US.UTF-8
+      - ru_RU.UTF-8

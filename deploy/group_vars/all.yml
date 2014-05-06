@@ -1,0 +1,29 @@
+---
+
+base_environment: develop
+
+# Common options
+#
+apt_cache_valid_time: 86400
+apt_autoremove: no
+apt_autoclean: no
+
+# Setup postgresql
+#
+postgresql_databases:
+  - { name: "{{base_project_name}}" }
+
+postgresql_users:
+  - { name: "{{base_project_name}}", pass: "{{base_project_name}}" }
+
+postgresql_user_privileges:
+  - name: "{{base_project_name}}"
+    db: "{{base_project_name}}"
+    priv: "ALL"
+
+django_settings_module: "{{base_project_name}}.main.settings.local"
+django_databases:
+  - default:
+      NAME: "{{postgresql_databases.0.name}}"
+      USER: "{{postgresql_users.0.name}}"
+      PASSWORD: "{{postgresql_users.0.pass}}"
