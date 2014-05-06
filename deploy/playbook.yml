@@ -3,9 +3,9 @@
   remote_user: vagrant
 
   roles:
-    - st.foundation
+    - Stouts.foundation
     - Ansibles.postgresql
-    - st.django
+    - Stouts.django
 
   vars:
     base_project_name: pylama_com
