@@ -1,0 +1,42 @@
+[submodule "deploy/roles/Ansibles.apt"]
+	path = deploy/roles/Ansibles.apt
+	url = https://github.com/Ansibles/apt.git
+[submodule "deploy/roles/Ansibles.build-essential"]
+	path = deploy/roles/Ansibles.build-essential
+	url = https://github.com/Ansibles/build-essential.git
+[submodule "deploy/roles/Ansibles.generic-users"]
+	path = deploy/roles/Ansibles.generic-users
+	url = https://github.com/Ansibles/generic-users.git
+[submodule "deploy/roles/Ansibles.hostname"]
+	path = deploy/roles/Ansibles.hostname
+	url = https://github.com/Ansibles/hostname.git
+[submodule "deploy/roles/Ansibles.ntp"]
+	path = deploy/roles/Ansibles.ntp
+	url = https://github.com/Ansibles/ntp.git
+[submodule "deploy/roles/Ansibles.postgresql"]
+	path = deploy/roles/Ansibles.postgresql
+	url = https://github.com/Ansibles/postgresql.git
+[submodule "deploy/roles/Ansibles.python"]
+	path = deploy/roles/Ansibles.python
+	url = https://github.com/Ansibles/python.git
+[submodule "deploy/roles/Ansibles.timezone"]
+	path = deploy/roles/Ansibles.timezone
+	url = https://github.com/Ansibles/timezone.git
+[submodule "deploy/roles/Ansibles.utilities"]
+	path = deploy/roles/Ansibles.utilities
+	url = https://github.com/Ansibles/utilities.git
+[submodule "deploy/roles/Stouts.base"]
+	path = deploy/roles/Stouts.base
+	url = https://github.com/Stouts/Stouts.base.git
+[submodule "deploy/roles/Stouts.django"]
+	path = deploy/roles/Stouts.django
+	url = https://github.com/Stouts/Stouts.django.git
+[submodule "deploy/roles/Stouts.foundation"]
+	path = deploy/roles/Stouts.foundation
+	url = https://github.com/Stouts/Stouts.foundation.git
+[submodule "deploy/roles/Stouts.locale"]
+	path = deploy/roles/Stouts.locale
+	url = https://github.com/Stouts/Stouts.locale.git
+[submodule "deploy/roles/Stouts.wsgi"]
+	path = deploy/roles/Stouts.wsgi
+	url = https://github.com/Stouts/Stouts.wsgi.git
