@@ -40,3 +40,6 @@
 [submodule "deploy/roles/Stouts.wsgi"]
 	path = deploy/roles/Stouts.wsgi
 	url = https://github.com/Stouts/Stouts.wsgi.git
+[submodule "deploy/roles/Stouts.sudo"]
+	path = deploy/roles/Stouts.sudo
+	url = https://github.com/Stouts/Stouts.sudo.git
