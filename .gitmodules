@@ -43,3 +43,6 @@
 [submodule "deploy/roles/Stouts.hostname"]
 	path = deploy/roles/Stouts.hostname
 	url = https://github.com/Stouts/Stouts.hostname.git
+[submodule "deploy/roles/Stouts.source"]
+	path = deploy/roles/Stouts.source
+	url = https://github.com/Stouts/Stouts.source.git
