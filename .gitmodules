@@ -7,9 +7,6 @@
 [submodule "deploy/roles/Ansibles.generic-users"]
 	path = deploy/roles/Ansibles.generic-users
 	url = https://github.com/Ansibles/generic-users.git
-[submodule "deploy/roles/Ansibles.hostname"]
-	path = deploy/roles/Ansibles.hostname
-	url = https://github.com/Ansibles/hostname.git
 [submodule "deploy/roles/Ansibles.ntp"]
 	path = deploy/roles/Ansibles.ntp
 	url = https://github.com/Ansibles/ntp.git
@@ -43,3 +40,6 @@
 [submodule "deploy/roles/Stouts.sudo"]
 	path = deploy/roles/Stouts.sudo
 	url = https://github.com/Stouts/Stouts.sudo.git
+[submodule "deploy/roles/Stouts.hostname"]
+	path = deploy/roles/Stouts.hostname
+	url = https://github.com/Stouts/Stouts.hostname.git

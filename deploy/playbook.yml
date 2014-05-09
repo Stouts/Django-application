@@ -4,6 +4,7 @@
 
   roles:
     - Stouts.foundation
+    - Stouts.sudo
     - Ansibles.postgresql
     - Stouts.django
 
@@ -12,3 +13,4 @@
     locale_locales:
       - en_US.UTF-8
       - ru_RU.UTF-8
+    sudo_passwordless: [sudo, admin]
