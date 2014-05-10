@@ -1,6 +1,3 @@
-[submodule "deploy/roles/Ansibles.apt"]
-	path = deploy/roles/Ansibles.apt
-	url = https://github.com/Ansibles/apt.git
 [submodule "deploy/roles/Ansibles.build-essential"]
 	path = deploy/roles/Ansibles.build-essential
 	url = https://github.com/Ansibles/build-essential.git
@@ -19,9 +16,6 @@
 [submodule "deploy/roles/Ansibles.timezone"]
 	path = deploy/roles/Ansibles.timezone
 	url = https://github.com/Ansibles/timezone.git
-[submodule "deploy/roles/Ansibles.utilities"]
-	path = deploy/roles/Ansibles.utilities
-	url = https://github.com/Ansibles/utilities.git
 [submodule "deploy/roles/Stouts.base"]
 	path = deploy/roles/Stouts.base
 	url = https://github.com/Stouts/Stouts.base.git
@@ -46,3 +40,9 @@
 [submodule "deploy/roles/Stouts.source"]
 	path = deploy/roles/Stouts.source
 	url = https://github.com/Stouts/Stouts.source.git
+[submodule "deploy/roles/Stouts.apt"]
+	path = deploy/roles/Stouts.apt
+	url = https://github.com/Stouts/Stouts.apt.git
+[submodule "deploy/roles/Stouts.nginx"]
+	path = deploy/roles/Stouts.nginx
+	url = https://github.com/Stouts/Stouts.nginx.git

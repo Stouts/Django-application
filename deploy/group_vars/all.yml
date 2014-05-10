@@ -5,8 +5,7 @@ base_environment: develop
 # Common options
 #
 apt_cache_valid_time: 86400
-apt_autoremove: no
-apt_autoclean: no
+apt_install_packages: yes
 
 # Setup postgresql
 #
