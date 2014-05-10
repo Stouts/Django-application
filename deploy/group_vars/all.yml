@@ -20,7 +20,16 @@ postgresql_user_privileges:
     db: "{{base_project_name}}"
     priv: "ALL"
 
-django_settings_module: "{{base_project_name}}.main.settings.local"
+source_known_hosts: [github.com]
+source_owner: "{{base_deploy_user}}"
+source_sources:
+  - repo: https://github.com/Dipsomaniac/dj-simple.git
+    dest: /usr/lib/simple/source
+
+wsgi_directory: "{{base_source_directory}}/simple"
+
+django_settings_module: "main.settings.local"
+django_app_path: "{{base_source_directory}}/simple"
 django_databases:
   - default:
       NAME: "{{postgresql_databases.0.name}}"

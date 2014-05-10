@@ -2,3 +2,9 @@
 
 base_environment: vagrant
 
+wsgi_nginx_static_locations: []
+wsgi_uwsgi_processes: 1
+wsgi_uwsgi_reload: yes
+
+django_migrate: yes
+django_collectstatic: yes

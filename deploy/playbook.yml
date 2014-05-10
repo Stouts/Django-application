@@ -14,7 +14,3 @@
       - en_US.UTF-8
       - ru_RU.UTF-8
     sudo_passwordless: [sudo, admin]
-    source_known_hosts: [github.com]
-    source_sources:
-      - repo: https://github.com/Dipsomaniac/dj-simple.git
-        dest: /usr/lib/simple/source
