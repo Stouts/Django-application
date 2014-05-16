@@ -46,3 +46,6 @@
 [submodule "deploy/roles/Stouts.nginx"]
 	path = deploy/roles/Stouts.nginx
 	url = https://github.com/Stouts/Stouts.nginx.git
+[submodule "deploy/roles/Stouts.supervisor"]
+	path = deploy/roles/Stouts.supervisor
+	url = https://github.com/Stouts/Stouts.supervisor.git
