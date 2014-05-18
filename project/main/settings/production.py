@@ -9,7 +9,7 @@ SECRET_KEY = 'DontForgetToReplaceMe'
 
 CACHES['default']['KEY_PREFIX'] = '_'.join((PROJECT_NAME, ENVIRONMENT_NAME))
 
-ROOT_URLCONF = "project.main.urls"
+ROOT_URLCONF = "%s.main.urls" % PROJECT_NAME
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 
@@ -17,7 +17,7 @@ SITE_ID = 1
 
 INSTALLED_APPS += (
     # Project
-    'project.main',
+    '%s.main' % PROJECT_NAME,
 )
 
 # Bootstrap
@@ -29,7 +29,7 @@ FILEBROWSER_DIRECTORY = Directory(MEDIA_ROOT, 'uploads')
 
 # Grappelli
 INSTALLED_APPS = ('grappelli.dashboard', 'grappelli') + INSTALLED_APPS
-GRAPPELLI_INDEX_DASHBOARD = 'project.main.dashboard.CustomIndexDashboard'
+GRAPPELLI_INDEX_DASHBOARD = '%s.main.dashboard.CustomIndexDashboard' % PROJECT_NAME # noqa
 GRAPPELLI_ADMIN_TITLE = PROJECT_NAME
 GRAPPELLI_SWITCH_USER = True
 
