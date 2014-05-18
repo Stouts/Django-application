@@ -1,0 +1,23 @@
+{% extends "main/base.html" %}
+
+{% block bootstrap3_content %}
+    {% block navigation %}
+        {% include "main/nav.html" %}
+    {% endblock %}
+
+    <div class="container">
+        <div class="project-template">
+            <div class="row">
+                <div class="col-md-4 well"> 
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted">© The Company 2014</p>
+      </div>
+    </div> 
+{% endblock %}

@@ -11,7 +11,6 @@ DATABASES['default']['NAME'] = ':memory:'
 
 # Caches
 CACHES['default']['BACKEND'] = 'django.core.cache.backends.locmem.LocMemCache'
-CACHES['default']['KEY_PREFIX'] = '_'.join((PROJECT_NAME, ENVIRONMENT_NAME))
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 

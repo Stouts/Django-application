@@ -1,0 +1,27 @@
+{% extends "bootstrap3/bootstrap3.html" %}
+
+{% block bootstrap3_extra_head %}
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}main.css?{{REVISION}}" />
+    {% block extra_head %}{% endblock %}
+{% endblock %}
+{% block bootstrap3_extra_script %}{% block extra_script %}{% endblock %}{% endblock %}
+
+{% block bootstrap3_content %}
+    {% block navigation %}
+        {% include "main/nav.html" %}
+    {% endblock %}
+    <div class="container">
+        <div class="project-template">
+            {% include "bootstrap3/messages.html" %}
+            {% block content %}
+                <h1>Hello world!</h1>
+            {% endblock %}
+        </div>
+    </div>
+
+    <div class="footer">
+      <div class="container">
+        <p class="text-muted">© The Company 2014</p>
+      </div>
+    </div> 
+{% endblock %}

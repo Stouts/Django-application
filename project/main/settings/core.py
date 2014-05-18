@@ -89,6 +89,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 )
 
+AUTHENTICATION_BACKENDS = 'django.contrib.auth.backends.ModelBackend',
+
 # Middleware
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',

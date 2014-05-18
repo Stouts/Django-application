@@ -1,5 +1,4 @@
 """ Project urls. """
-
 from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
@@ -8,10 +7,14 @@ from filebrowser.sites import site
 
 urlpatterns = [
     url(r'^$', 'project.main.views.index', name='home'),
-    url(r'^login/$', 'django.contrib.auth.views.login'),
-    url(r'^logout/$', 'django.contrib.auth.views.logout'),
     url(r'^desk/filebrowser/', include(site.urls)),
+    url(r'^accounts/profile/', 'project.main.views.index', name='profile'),
 ]
+
+# Allauth
+urlpatterns.append(
+    url(r'^accounts/', include('allauth.urls'))
+)
 
 # Django admin
 admin.autodiscover()

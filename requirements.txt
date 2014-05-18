@@ -4,6 +4,8 @@ Pillow>=2.4.0
 South>=0.8.4
 celery>=3.1.11
 dealer>=1.1.1
+django-allauth==0.16.1
+django-bootstrap-form==3.1
 django-bootstrap3>=4.4.1
 django-filebrowser>=3.5.6
 django-grappelli>=2.5.3
