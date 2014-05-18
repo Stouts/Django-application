@@ -13,6 +13,11 @@ ROOT_URLCONF = "main.urls"
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 
+INSTALLED_APPS += (
+    # Project
+    'main',
+)
+
 # Bootstrap
 INSTALLED_APPS += 'bootstrap3',
 

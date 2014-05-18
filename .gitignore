@@ -1,4 +1,5 @@
 *.pyc
+/.ropeproject
 /.vimrc
 /project/main/settings/local.py
 /project/static
