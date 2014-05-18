@@ -1,12 +1,16 @@
 """ Immutable settings. Common for all projects. """
+import sys
+from os import path as op, walk, listdir, makedirs
 
 import logging
-from os import path as op, walk, listdir, makedirs
 
 
 APPS_ROOT = op.abspath(op.dirname(op.dirname(op.dirname(__file__))))
 PROJECT_ROOT = op.dirname(APPS_ROOT)
 PROJECT_NAME = op.basename(APPS_ROOT)
+
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
 
 ENVIRONMENT_NAME = 'core'
 

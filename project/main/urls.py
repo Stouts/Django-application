@@ -7,7 +7,9 @@ from filebrowser.sites import site
 
 
 urlpatterns = [
-    url(r'^$', 'main.views.index', name='home'),
+    url(r'^$', 'project.main.views.index', name='home'),
+    url(r'^login/$', 'django.contrib.auth.views.login'),
+    url(r'^logout/$', 'django.contrib.auth.views.logout'),
     url(r'^desk/filebrowser/', include(site.urls)),
 ]
 

@@ -21,12 +21,13 @@ clean:
 
 $(VENV): $(REQUIREMENTS)
 	[ -d $(VENV) ] || virtualenv --no-site-packages $(VENV)
-	$(VENV)/bin/pip install -M -r $(REQUIREMENTS) --allow-external mysql-connector-python --allow-unverified mysql-connector-python
+	$(VENV)/bin/pip install -r $(REQUIREMENTS)
 
 .PHONY: run
 # target: run - Run Django development server
 run: $(VENV)
-	$(VENV)/bin/python $(MANAGER) runserver_plus 0.0.0.0:8000 --settings=$(SETTINGS) || $(VENV)/bin/python $(MANAGER) runserver 0.0.0.0:8000 --settings=$(SETTINGS) 
+	$(VENV)/bin/python $(MANAGER) runserver_plus 0.0.0.0:8000 --settings=$(SETTINGS) \
+	    || $(VENV)/bin/python $(MANAGER) runserver 0.0.0.0:8000 --settings=$(SETTINGS) 
 
 .PHONY: db
 # target: db - Prepare database
@@ -37,7 +38,8 @@ db: $(VENV)
 .PHONY: shell
 # target: shell - Run project shell
 shell: $(VENV)
-	$(VENV)/bin/python $(MANAGER) shell_plus --settings=$(SETTINGS) || $(VENV)/bin/python $(MANAGER) shell --settings=$(SETTINGS)
+	$(VENV)/bin/python $(MANAGER) shell_plus --settings=$(SETTINGS) \
+	    || $(VENV)/bin/python $(MANAGER) shell --settings=$(SETTINGS)
 
 .PHONY: static
 # target: static - Compile project static
@@ -49,8 +51,7 @@ static: $(VENV)
 # target: lint - Code audit
 lint: $(VENV)
 	@rm -rf pep8.pylama pylint.pylama
-	$(VENV)/bin/pip install pylama
-	$(VENV)/bin/pip install pylama_pylint
+	$(VENV)/bin/pip install pylama pylama_pylint
 	$(VENV)/bin/pylama . -r pep8.pylama -l pep257,pep8,pyflakes,mccabe || echo
 	$(VENV)/bin/pylama . -r pylint.pylama -l pylint -f pylint || echo
 
@@ -58,6 +59,6 @@ lint: $(VENV)
 # target: test - Run project's tests
 TEST ?=
 test: $(VENV)
-	$(VENV)/bin/python $(MANAGER) test $(TEST) --settings=main.settings.test
+	$(VENV)/bin/py.test
 
 t: test

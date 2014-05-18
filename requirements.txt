@@ -16,3 +16,5 @@ ipdb>=0.8
 # Test
 mixer>=4.0.7
 pytest-django>=2.6.2
+pytest-xdist>=1.10
+pytest-cov>=1.6
