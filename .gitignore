@@ -1,2 +1,5 @@
+*.pyc
 /.vimrc
+/project/main/settings/local.py
+/project/static
 /todo.txt
