@@ -62,3 +62,8 @@ test: $(VENV)
 	$(VENV)/bin/py.test
 
 t: test
+
+.PHONY: celery
+# target: celery - Run celery worker
+celery: $(VENV)
+	$(VENV)/bin/celery worker -A project.main
