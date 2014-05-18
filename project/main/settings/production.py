@@ -23,7 +23,7 @@ INSTALLED_APPS += 'bootstrap3',
 
 # File browser
 INSTALLED_APPS = ('filebrowser',) + INSTALLED_APPS
-FILEBROWSER_DIRECTORY = op.join(MEDIA_ROOT, 'uploads')
+FILEBROWSER_DIRECTORY = Directory(MEDIA_ROOT, 'uploads')
 
 # Grappelli
 INSTALLED_APPS = ('grappelli.dashboard', 'grappelli') + INSTALLED_APPS

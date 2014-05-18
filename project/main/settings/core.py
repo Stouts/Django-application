@@ -1,11 +1,12 @@
 """ Immutable settings. Common for all projects. """
 
 import logging
-from os import path as op, walk, listdir
+from os import path as op, walk, listdir, makedirs
 
 
-PROJECT_ROOT = op.abspath(op.dirname(op.dirname(op.dirname(__file__))))
-PROJECT_NAME = op.basename(PROJECT_ROOT)
+APPS_ROOT = op.abspath(op.dirname(op.dirname(op.dirname(__file__))))
+PROJECT_ROOT = op.dirname(APPS_ROOT)
+PROJECT_NAME = op.basename(APPS_ROOT)
 
 ENVIRONMENT_NAME = 'core'
 
@@ -31,11 +32,24 @@ CACHES = {
     }
 }
 
+
+def Directory(*path):
+    """ Create directory if not exists. """
+    path = op.join(*path)
+    if not op.exists(path):
+        try:
+            makedirs(path)
+        except OSError:
+            logging.warning("%s does not exists.", path)
+    return path
+
+
 # Media settigns
-MEDIA_ROOT = op.join(PROJECT_ROOT, 'media')
-STATIC_ROOT = op.join(PROJECT_ROOT, 'static')
+MEDIA_ROOT = Directory(PROJECT_ROOT, 'media')
+STATIC_ROOT = Directory(PROJECT_ROOT, 'static')
 MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
+
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -44,8 +58,8 @@ STATICFILES_FINDERS = (
 
 # Templates settings
 TEMPLATE_DIRS = ()
-for directory_name in walk(PROJECT_ROOT).next()[1]:
-    directory_path = op.join(PROJECT_ROOT, directory_name)
+for directory_name in walk(APPS_ROOT).next()[1]:
+    directory_path = op.join(APPS_ROOT, directory_name)
     if 'templates' in listdir(directory_path):
         TEMPLATE_DIRS += (op.join(directory_path, 'templates'),)
 
@@ -91,8 +105,8 @@ USE_TZ = True
 # MIDDLEWARE_CLASSES += ('django.middleware.locale.LocaleMiddleware',)
 TEMPLATE_CONTEXT_PROCESSORS += ('django.core.context_processors.i18n',)
 LOCALE_PATHS = ()
-for directory_name in walk(PROJECT_ROOT).next()[1]:
-    directory_path = op.join(PROJECT_ROOT, directory_name)
+for directory_name in walk(APPS_ROOT).next()[1]:
+    directory_path = op.join(APPS_ROOT, directory_name)
     if 'locale' in listdir(directory_path):
         LOCALE_PATHS += (op.join(directory_path, 'locale'),)
 
