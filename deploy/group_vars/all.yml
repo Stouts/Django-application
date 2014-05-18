@@ -20,16 +20,19 @@ postgresql_user_privileges:
     db: "{{base_project_name}}"
     priv: "ALL"
 
+# Load source
+# (Disable for vagrant of source directory mounted)
 source_known_hosts: [github.com]
 source_owner: "{{base_deploy_user}}"
 source_sources:
-  - repo: https://github.com/Dipsomaniac/dj-simple.git
-    dest: /usr/lib/simple/source
+  - repo: https://github.com/Stouts/Django-application.git
+    dest: /usr/lib/{{base_project_name}}/source
 
-wsgi_directory: "{{base_source_directory}}/simple"
+wsgi_directory: "{{base_source_directory}}/{{base_project_name}}"
+wsgi_hostname: "project.local"
 
 django_settings_module: "main.settings.local"
-django_app_path: "{{base_source_directory}}/simple"
+django_app_path: "{{wsgi_directory}}"
 django_databases:
   - default:
       NAME: "{{postgresql_databases.0.name}}"

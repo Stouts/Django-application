@@ -1,6 +1,5 @@
 - hosts: all
   sudo: yes
-  remote_user: vagrant
 
   roles:
     - Stouts.foundation
@@ -9,7 +8,7 @@
     - Stouts.django
 
   vars:
-    base_project_name: simple
+    base_project_name: project
     locale_locales:
       - en_US.UTF-8
       - ru_RU.UTF-8

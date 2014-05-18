@@ -4,9 +4,9 @@
 # Options {{{
 #
 APP_HOST = "33.33.33.2"
-APP_HOSTNAME = "ansible.local"
+APP_HOSTNAME = "project.local"
 
-MOUNT_DIR = "/usr/lib/pylama_com/source"
+MOUNT_DIR = "/usr/lib/project/source"
 ANSIBLE_ROOT = "deploy"
 
 # }}}
