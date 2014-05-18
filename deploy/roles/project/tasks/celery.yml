@@ -1,0 +1,12 @@
+---
+
+- name: Configure celery
+  template: src=celery.conf.j2 dest={{base_configuration_directory}}/celery.conf
+  notify:
+    - supervisor reread
+
+- name: Link celery config
+  file: state=link dest=/etc/supervisor/conf.d/{{base_project_name}}-celery.conf src={{base_configuration_directory}}/celery.conf
+  notify:
+    - supervisor reread
+

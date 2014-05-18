@@ -34,6 +34,7 @@ wsgi_apt_packages:
   - postgresql-server-dev-all
 
 django_app_path: "{{wsgi_directory}}"
+django_manage_list:
 django_settings_module: "main.settings.local"
 django_settings_databases:
   - default:
@@ -45,4 +46,5 @@ django_settings_caches:
   - default:
       BACKEND: redis_cache.cache.RedisCache
       LOCATION: "{{redis_bind}}:{{redis_port}}:1"
-django_manage_list:
+django_settings_additional:
+    - BROKER_URL = 'redis://{{redis_bind}}:{{redis_port}}'
