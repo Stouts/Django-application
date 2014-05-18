@@ -35,6 +35,7 @@ django_settings_module: "main.settings.local"
 django_app_path: "{{wsgi_directory}}"
 django_settings_databases:
   - default:
+      ENGINE: django.db.backends.postgresql_psycopg2
       NAME: "{{postgresql_databases.0.name}}"
       USER: "{{postgresql_users.0.name}}"
       PASSWORD: "{{postgresql_users.0.pass}}"
