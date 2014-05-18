@@ -33,8 +33,13 @@ wsgi_hostname: "project.local"
 
 django_settings_module: "main.settings.local"
 django_app_path: "{{wsgi_directory}}"
-django_databases:
+django_settings_databases:
   - default:
       NAME: "{{postgresql_databases.0.name}}"
       USER: "{{postgresql_users.0.name}}"
       PASSWORD: "{{postgresql_users.0.pass}}"
+
+django_settings_caches:
+  - default:
+      BACKEND: redis_cache.cache.RedisCache
+      LOCATION: "{{redis_bind}}:{{redis_port}}:1"

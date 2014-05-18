@@ -11,6 +11,8 @@ CACHES['KEY_PREFIX'] = '_'.join((PROJECT_NAME, ENVIRONMENT_NAME))
 
 ROOT_URLCONF = "main.urls"
 
+SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+
 # Bootstrap
 INSTALLED_APPS += 'bootstrap3',
 

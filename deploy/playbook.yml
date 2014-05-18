@@ -5,6 +5,7 @@
     - Stouts.foundation
     - Stouts.source
     - Ansibles.postgresql
+    - Stouts.redis
     - Stouts.django
 
   vars:

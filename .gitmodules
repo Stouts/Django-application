@@ -49,3 +49,6 @@
 [submodule "deploy/roles/Stouts.supervisor"]
 	path = deploy/roles/Stouts.supervisor
 	url = https://github.com/Stouts/Stouts.supervisor.git
+[submodule "deploy/roles/Stouts.redis"]
+	path = deploy/roles/Stouts.redis
+	url = https://github.com/Stouts/Stouts.redis.git
