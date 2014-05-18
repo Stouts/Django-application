@@ -8,5 +8,8 @@ wsgi_nginx_static_locations: []
 wsgi_uwsgi_processes: 1
 wsgi_uwsgi_reload: yes
 
-django_migrate: yes
-django_collectstatic: yes
+django_manage_list:
+    - collectstatic
+    - syncdb
+    - manage
+    - create_devdata
