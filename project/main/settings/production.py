@@ -31,6 +31,9 @@ GRAPPELLI_INDEX_DASHBOARD = 'project.main.dashboard.CustomIndexDashboard'
 GRAPPELLI_ADMIN_TITLE = PROJECT_NAME
 GRAPPELLI_SWITCH_USER = True
 
+# Dealer
+TEMPLATE_CONTEXT_PROCESSORS += 'dealer.contrib.django.context_processor',
+
 
 logging.info("Production settings are loaded.")
 
