@@ -9,10 +9,17 @@ from filebrowser.sites import site
 urlpatterns = [
     url(r'^$', 'main.views.index', name='home'),
     url(r'^desk/filebrowser/', include(site.urls)),
+]
+
+# Django admin
+admin.autodiscover()
+urlpatterns += [
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^desk/', include(admin.site.urls)),
 ]
 
+
+# Debug tools
 if settings.DEBUG:
     import debug_toolbar
 
