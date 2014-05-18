@@ -1,14 +1,9 @@
 """ Init wsgi application. """
-import os.path
-import sys
-
-from main.wsgi import application
-
-
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'project'))
-
-
 from django.conf import settings
+
+from project.main.wsgi import application
+
+
 if settings.DEBUG:
     import uwsgi
     from uwsgidecorators import timer

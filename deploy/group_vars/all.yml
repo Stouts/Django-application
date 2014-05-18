@@ -28,12 +28,11 @@ source_sources:
   - repo: https://github.com/Stouts/Django-application.git
     dest: /usr/lib/{{base_project_name}}/source
 
-wsgi_directory: "{{base_source_directory}}/{{base_project_name}}"
 wsgi_hostname: "project.local"
 wsgi_apt_packages:
   - postgresql-server-dev-all
 
-django_app_path: "{{wsgi_directory}}"
+django_app_path: "{{wsgi_directory}}/{{base_project_name}}"
 django_manage_list:
 django_settings_module: "main.settings.local"
 django_settings_databases:
