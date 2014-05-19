@@ -29,11 +29,11 @@ if settings.DEBUG:
     import debug_toolbar
 
     urlpatterns += [
-        url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
+        url(r'^%s/(?P<path>.*)$' % settings.MEDIA_URL.strip('/'), 'django.views.static.serve',
             {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
 
-        url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
-            {'document_root': settings.STATIC_ROOT, 'show_indexes': True}),
+        url(r'^%s/(?P<path>.*)$' % settings.STATIC_URL.strip('/'),
+            'django.contrib.staticfiles.views.serve'),
 
         url(r'^__debug__/', include(debug_toolbar.urls))
     ]
