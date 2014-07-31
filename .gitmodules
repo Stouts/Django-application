@@ -1,9 +1,6 @@
 [submodule "deploy/roles/Ansibles.build-essential"]
 	path = deploy/roles/Ansibles.build-essential
 	url = https://github.com/Ansibles/build-essential.git
-[submodule "deploy/roles/Ansibles.generic-users"]
-	path = deploy/roles/Ansibles.generic-users
-	url = https://github.com/Ansibles/generic-users.git
 [submodule "deploy/roles/Ansibles.ntp"]
 	path = deploy/roles/Ansibles.ntp
 	url = https://github.com/Ansibles/ntp.git
@@ -52,3 +49,15 @@
 [submodule "deploy/roles/Stouts.redis"]
 	path = deploy/roles/Stouts.redis
 	url = https://github.com/Stouts/Stouts.redis.git
+[submodule "deploy/roles/Stouts.users"]
+	path = deploy/roles/Stouts.users
+	url = https://github.com/Stouts/Stouts.users
+[submodule "deploy/roles/Stouts.timezone"]
+	path = deploy/roles/Stouts.timezone
+	url = https://github.com/Stouts/Stouts.timezone
+[submodule "deploy/roles/Stouts.deploy"]
+	path = deploy/roles/Stouts.deploy
+	url = https://github.com/Stouts/Stouts.deploy
+[submodule "deploy/roles/Stouts.python"]
+	path = deploy/roles/Stouts.python
+	url = https://github.com/Stouts/Stouts.python

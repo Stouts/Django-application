@@ -1,39 +1,39 @@
 ---
 
-base_environment: develop
+# Stouts.deploy
+# =============
+deploy_app_name: project
 
-# Common options
-#
+# Stouts.apt
+# ==========
 apt_cache_valid_time: 86400
 apt_install_packages: yes
 
-# Setup postgresql
-#
+# Ansibles.postgresql
+# ===================
 postgresql_databases:
   - { name: "{{base_project_name}}" }
-
 postgresql_users:
   - { name: "{{base_project_name}}", pass: "{{base_project_name}}" }
-
 postgresql_user_privileges:
   - name: "{{base_project_name}}"
     db: "{{base_project_name}}"
     priv: "ALL"
 
-# Load source
-# (Disable for vagrant of source directory mounted)
-source_known_hosts: [github.com]
-source_owner: "{{base_deploy_user}}"
+# Stouts.source
+# =============
 source_sources:
   - repo: https://github.com/Stouts/Django-application.git
-    dest: /usr/lib/{{base_project_name}}/source
+    dest: "{{deploy_src_dir}}"
 
-wsgi_hostname: "project.local"
-wsgi_apt_packages:
+# Stouts.wsgi
+# ===========
+wsgi_nginx_servernames: "project.local"
+wsgi_deb_packages:
   - postgresql-server-dev-all
 
-django_app_path: "{{wsgi_directory}}/{{base_project_name}}"
-django_manage_list:
+# Stouts.django
+# =============
 django_settings_module: "main.settings.local"
 django_settings_databases:
   - default:
