@@ -11,5 +11,4 @@ wsgi_uwsgi_reload: yes
 django_manage_list:
     - collectstatic
     - syncdb
-    - migrate
     - create_devdata
