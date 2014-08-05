@@ -7,7 +7,6 @@
     - Ansibles.postgresql
     - Stouts.redis
     - Stouts.django
-    - project
 
   vars:
     base_project_name: project

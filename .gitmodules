@@ -7,12 +7,6 @@
 [submodule "deploy/roles/Ansibles.postgresql"]
 	path = deploy/roles/Ansibles.postgresql
 	url = https://github.com/Ansibles/postgresql.git
-[submodule "deploy/roles/Ansibles.python"]
-	path = deploy/roles/Ansibles.python
-	url = https://github.com/Ansibles/python.git
-[submodule "deploy/roles/Ansibles.timezone"]
-	path = deploy/roles/Ansibles.timezone
-	url = https://github.com/Ansibles/timezone.git
 [submodule "deploy/roles/Stouts.base"]
 	path = deploy/roles/Stouts.base
 	url = https://github.com/Stouts/Stouts.base.git
@@ -43,9 +37,6 @@
 [submodule "deploy/roles/Stouts.nginx"]
 	path = deploy/roles/Stouts.nginx
 	url = https://github.com/Stouts/Stouts.nginx.git
-[submodule "deploy/roles/Stouts.supervisor"]
-	path = deploy/roles/Stouts.supervisor
-	url = https://github.com/Stouts/Stouts.supervisor.git
 [submodule "deploy/roles/Stouts.redis"]
 	path = deploy/roles/Stouts.redis
 	url = https://github.com/Stouts/Stouts.redis.git
