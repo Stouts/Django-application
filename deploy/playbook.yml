@@ -1,6 +1,5 @@
-- hosts: all
+- hosts: vagrant
   sudo: yes
-
   roles:
     - Stouts.foundation
     - Stouts.source
@@ -8,9 +7,4 @@
     - Stouts.redis
     - Stouts.django
 
-  vars:
-    base_project_name: project
-    locale_locales:
-      - en_US.UTF-8
-      - ru_RU.UTF-8
-    sudo_passwordless: [sudo, admin]
+# vim:sw=2

@@ -12,9 +12,9 @@ class Command(BaseCommand):
 
             # Admin user
             mixer.guard(username='admin').blend(
-                'auth.user', email='admin@google.com', password='pass',
+                'auth.user', username='admin', email='admin@google.com', password='pass',
                 is_staff=True, is_superuser=True)
 
             # Simple user
             mixer.guard(username='user').blend(
-                'auth.user', email='user@google.com', password='pass')
+                'auth.user', username='user', email='user@google.com', password='pass')

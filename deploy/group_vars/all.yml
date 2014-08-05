@@ -9,15 +9,19 @@ deploy_app_name: project
 apt_cache_valid_time: 86400
 apt_install_packages: yes
 
+# Stouts.sudo
+# ===========
+sudo_passwordless: [sudo, admin, "{{deploy_user}}"]
+
 # Ansibles.postgresql
 # ===================
 postgresql_databases:
-  - { name: "{{base_project_name}}" }
+  - { name: "{{deploy_app_name}}" }
 postgresql_users:
-  - { name: "{{base_project_name}}", pass: "{{base_project_name}}" }
+  - { name: "{{deploy_app_name}}", pass: "{{deploy_app_name}}" }
 postgresql_user_privileges:
-  - name: "{{base_project_name}}"
-    db: "{{base_project_name}}"
+  - name: "{{deploy_app_name}}"
+    db: "{{deploy_app_name}}"
     priv: "ALL"
 
 # Stouts.source

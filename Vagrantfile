@@ -6,7 +6,7 @@
 APP_HOST = "33.33.33.2"
 APP_HOSTNAME = "project.local"
 
-MOUNT_DIR = "/usr/lib/project/source"
+MOUNT_DIR = "/usr/lib/project/src"
 ANSIBLE_ROOT = "deploy"
 
 # }}}
