@@ -37,7 +37,7 @@ Vagrant.configure("2") do |config|
     end
 
     # Share folder
-    # config.vm.synced_folder '.', MOUNT_DIR, :nfs => true
+    config.vm.synced_folder '.', MOUNT_DIR, :nfs => true
 
     config.ssh.forward_agent = true
 

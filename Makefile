@@ -1,10 +1,10 @@
-VENV ?= $(CURDIR)/../venv
-SETTINGS ?= main.settings.local
+ENV ?= $(CURDIR)/../env
+SETTINGS ?= project.settings.local
 MANAGER = $(CURDIR)/project/manage.py
 REQUIREMENTS = $(CURDIR)/requirements.txt
  
-all: $(VENV)
-	$(VENV)/bin/python $(MANAGER) $(ARGS) --settings=$(SETTINGS)
+all: $(ENV)
+	$(ENV)/bin/python $(MANAGER) $(ARGS) --settings=$(SETTINGS)
 
 .PHONY: help
 # target: help - Display callable targets
@@ -19,51 +19,51 @@ clean:
 	@find $(CURDIR) -name "*.deb" -delete
 	@rm -rf build
 
-$(VENV): $(REQUIREMENTS)
-	[ -d $(VENV) ] || virtualenv --no-site-packages $(VENV)
-	$(VENV)/bin/pip install -r $(REQUIREMENTS)
+$(ENV): $(REQUIREMENTS)
+	[ -d $(ENV) ] || virtualenv --no-site-packages $(ENV)
+	$(ENV)/bin/pip install -r $(REQUIREMENTS)
 
 .PHONY: run
 # target: run - Run Django development server
-run: $(VENV)
-	$(VENV)/bin/python $(MANAGER) runserver_plus 0.0.0.0:8000 --settings=$(SETTINGS) \
-	    || $(VENV)/bin/python $(MANAGER) runserver 0.0.0.0:8000 --settings=$(SETTINGS) 
+run: $(ENV)
+	$(ENV)/bin/python $(MANAGER) runserver_plus 0.0.0.0:8000 --settings=$(SETTINGS) \
+	    || $(ENV)/bin/python $(MANAGER) runserver 0.0.0.0:8000 --settings=$(SETTINGS) 
 
 .PHONY: db
 # target: db - Prepare database
-db: $(VENV)
-	$(VENV)/bin/python $(MANAGER) syncdb --settings=$(SETTINGS) --noinput || echo 'sync failed'
-	$(VENV)/bin/python $(MANAGER) migrate --settings=$(SETTINGS) --noinput
+db: $(ENV)
+	$(ENV)/bin/python $(MANAGER) syncdb --settings=$(SETTINGS) --noinput || echo 'sync failed'
+	$(ENV)/bin/python $(MANAGER) migrate --settings=$(SETTINGS) --noinput
 
 .PHONY: shell
 # target: shell - Run project shell
-shell: $(VENV)
-	$(VENV)/bin/python $(MANAGER) shell_plus --settings=$(SETTINGS) \
-	    || $(VENV)/bin/python $(MANAGER) shell --settings=$(SETTINGS)
+shell: $(ENV)
+	$(ENV)/bin/python $(MANAGER) shell_plus --settings=$(SETTINGS) \
+	    || $(ENV)/bin/python $(MANAGER) shell --settings=$(SETTINGS)
 
 .PHONY: static
 # target: static - Compile project static
-static: $(VENV)
+static: $(ENV)
 	@mkdir -p $(CURDIR)/static
-	$(VENV)/bin/python $(MANAGER) collectstatic --settings=$(SETTINGS) --noinput -c
+	$(ENV)/bin/python $(MANAGER) collectstatic --settings=$(SETTINGS) --noinput -c
 
 .PHONY: lint
 # target: lint - Code audit
-lint: $(VENV)
+lint: $(ENV)
 	@rm -rf pep8.pylama pylint.pylama
-	$(VENV)/bin/pip install pylama pylama_pylint
-	$(VENV)/bin/pylama . -r pep8.pylama -l pep257,pep8,pyflakes,mccabe || echo
-	$(VENV)/bin/pylama . -r pylint.pylama -l pylint -f pylint || echo
+	$(ENV)/bin/pip install pylama pylama_pylint
+	$(ENV)/bin/pylama . -r pep8.pylama -l pep257,pep8,pyflakes,mccabe || echo
+	$(ENV)/bin/pylama . -r pylint.pylama -l pylint -f pylint || echo
 
 .PHONY: test t
 # target: test - Run project's tests
 TEST ?=
-test: $(VENV)
-	$(VENV)/bin/py.test
+test: $(ENV)
+	$(ENV)/bin/py.test
 
 t: test
 
 .PHONY: celery
 # target: celery - Run celery worker
-celery: $(VENV)
-	$(VENV)/bin/celery worker -A project.main
+celery: $(ENV)
+	$(ENV)/bin/celery worker -A project

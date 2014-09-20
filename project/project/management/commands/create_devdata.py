@@ -6,7 +6,7 @@ class Command(BaseCommand):
     """ Create development data. """
 
     def handle(self, **kwargs):
-        from main.utils.mixer import mixer
+        from project.utils.mixer import mixer
 
         with mixer.ctx(loglevel='INFO'):
 

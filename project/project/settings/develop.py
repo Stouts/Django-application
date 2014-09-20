@@ -11,16 +11,9 @@ TEMPLATE_CONTEXT_PROCESSORS += 'django.core.context_processors.debug',
 MIDDLEWARE_CLASSES += 'debug_toolbar.middleware.DebugToolbarMiddleware',
 INSTALLED_APPS += 'debug_toolbar', 'django_extensions'
 DEBUG_TOOLBAR_PATCH_SETTINGS = False
-INTERNAL_IPS = '127.0.0.1', '33.33.33.1'
+INTERNAL_IPS += '33.33.33.1',
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-# Logging
-LOGGING['loggers']['django.request']['level'] = 'WARNING'
-LOGGING['loggers']['django.db.backends'] = {
-    'handlers': ['console'],
-    'level': 'WARNING'
-}
 
 # Caches
 CACHES['default']['KEY_PREFIX'] = '_'.join((PROJECT_NAME, ENVIRONMENT_NAME))

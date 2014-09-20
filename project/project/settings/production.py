@@ -9,15 +9,12 @@ SECRET_KEY = 'DontForgetToReplaceMe'
 
 CACHES['default']['KEY_PREFIX'] = '_'.join((PROJECT_NAME, ENVIRONMENT_NAME))
 
-ROOT_URLCONF = "%s.main.urls" % PROJECT_NAME
-
 SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 
-SITE_ID = 1
-
 INSTALLED_APPS += (
+
     # Project
-    '%s.main' % PROJECT_NAME,
+    PROJECT_NAME,
 )
 
 # Bootstrap
@@ -29,7 +26,7 @@ FILEBROWSER_DIRECTORY = Directory(MEDIA_ROOT, 'uploads')
 
 # Grappelli
 INSTALLED_APPS = ('grappelli.dashboard', 'grappelli') + INSTALLED_APPS
-GRAPPELLI_INDEX_DASHBOARD = '%s.main.dashboard.CustomIndexDashboard' % PROJECT_NAME # noqa
+GRAPPELLI_INDEX_DASHBOARD = 'project.dashboard.CustomIndexDashboard'
 GRAPPELLI_ADMIN_TITLE = PROJECT_NAME
 GRAPPELLI_SWITCH_USER = True
 
@@ -40,12 +37,13 @@ TEMPLATE_CONTEXT_PROCESSORS += 'dealer.contrib.django.context_processor',
 ACCOUNT_AUTHENTICATION_METHOD = "username_email"
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_SUBJECT_PREFIX = "[%s]" % PROJECT_NAME
-TEMPLATE_DIRS = (op.join(APPS_ROOT, 'main', 'templates', 'allauth'),) + TEMPLATE_DIRS  # noqa
+TEMPLATE_DIRS = (op.join(PROJECT_ROOT, 'main', 'templates', 'allauth'),) + TEMPLATE_DIRS  # noqa
 TEMPLATE_CONTEXT_PROCESSORS += (
     'allauth.account.context_processors.account',
     'allauth.socialaccount.context_processors.socialaccount',
 )
-AUTHENTICATION_BACKENDS += (
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 INSTALLED_APPS += (

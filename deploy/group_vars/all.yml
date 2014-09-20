@@ -32,14 +32,16 @@ source_sources:
 
 # Stouts.wsgi
 # ===========
+wsgi_app: "{{wsgi_src_dir}}/project/wsgi.py"
 wsgi_nginx_servernames: "project.local"
+wsgi_src_dir: "{{deploy_src_dir}}/project"
 wsgi_deb_packages:
   - postgresql-server-dev-all
 
 # Stouts.django
 # =============
-django_settings_module: "main.settings.local"
-django_settings_dir: "{{deploy_src_dir}}/project/main/settings"
+django_settings_module: "project.settings.local"
+django_settings_dir: "{{deploy_src_dir}}/project/project/settings"
 django_app_dir: "{{deploy_src_dir}}/project"
 django_manage_list:
   - collectstatic

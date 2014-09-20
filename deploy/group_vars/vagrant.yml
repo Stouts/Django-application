@@ -1,6 +1,6 @@
 ---
 
-base_environment: vagrant
+deploy_env: vagrant
 
 # source_enabled: no
 
