@@ -46,6 +46,7 @@ Vagrant.configure("2") do |config|
         ansible.inventory_path = ANSIBLE_ROOT + "/inventory.ini"
         ansible.verbose = "vv"
         # ansible.tags = "wsgi"
+        ansible.limit = 'vagrant'
     end
 
 end
