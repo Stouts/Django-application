@@ -59,6 +59,7 @@ lint: $(ENV)
 # target: test - Run project's tests
 TEST ?=
 test: $(ENV)
+	$(ENV)/bin/pip install -e .
 	$(ENV)/bin/py.test
 
 t: test
