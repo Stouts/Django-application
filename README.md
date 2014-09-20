@@ -1,4 +1,4 @@
 Django Application
 ==================
 
-Example receipts for deployment Django application.
+Example recipe for deploying a Django application.
